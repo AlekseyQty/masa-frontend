@@ -1,0 +1,7 @@
+<div class="mf-radio-button">
+    <div class="radio-button-element" *ngFor="let radioButton of selectionList; index as i">
+        <input type="radio" [id]="radioButton+i" [name]="radioId" [value]="radioButton" [(ngModel)]="selectedValue"
+        (change)="onselectionChange()">
+        <label [attr.for]="radioButton+i" [innerText]="radioButton"></label>
+    </div>
+</div>

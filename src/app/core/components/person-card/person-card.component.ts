@@ -18,11 +18,13 @@ export class PersonCardComponent implements OnInit {
   @Input() personId: number = 0;
   @Input() personAddress: string = "";
   @Input() personEmail: string = "";
+  @Input() personGender: string = "";
 
   @Output() personNameChange: EventEmitter<string> = new EventEmitter<string>();
   @Output() personIdChange: EventEmitter<number> = new EventEmitter<number>();
   @Output() personAddressChange: EventEmitter<string> = new EventEmitter<string>();
   @Output() personEmailChange: EventEmitter<string> = new EventEmitter<string>();
+  @Output() personGenderChange: EventEmitter<string> = new EventEmitter<string>();
   
   @Output() onModeChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() onSaveClicked: EventEmitter<void> = new EventEmitter<void>();
@@ -30,6 +32,8 @@ export class PersonCardComponent implements OnInit {
   public ViewMode = ViewMode;
 
   public buttonTitle: string = "";
+  public genderList: string[] = ["Male", "Female"];
+  public genderSelected: string = "Female";
   public mode: ViewMode = ViewMode.ReadOnly;
 
   public test: boolean = true;
@@ -68,6 +72,11 @@ export class PersonCardComponent implements OnInit {
 
   public onPersonEmailChange(): void {
     this.personEmailChange.emit(this.personEmail);
+  }
+
+  public onPersonGenderChange(value: any): void {
+    this.personGender = value;
+    this.personGenderChange.emit(this.personGender);
   }
 
   private setButtonTitle() {
