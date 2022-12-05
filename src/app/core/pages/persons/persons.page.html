@@ -20,7 +20,8 @@
 
 
     <mf-person-card *ngFor="let person of persons; index as i"
-        [(personName)]="person.name"
+        [personName]="person.name"
+        (personNameChange)="person.name=$event"
         [(personId)]="person.id"
         [(personAddress)]="person.address"
         [(personEmail)]="person.email"

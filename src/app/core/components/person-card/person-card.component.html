@@ -7,7 +7,6 @@
         <div>Gender</div>
     </div>
     <div class="right-pane">
-
         <div [hidden]="mode !== ViewMode.ReadOnly">
             <div [innerText]="personName"></div>
             <div [innerText]="personId"></div>
@@ -31,8 +30,8 @@
             </div>
             <mf-radio-button 
             [selectionList]="genderList"
-            [selectedValue]="personGender"
-            (selectionChange)="onPersonGenderChange($event)"
+            [(selectedValue)]="personGender"
+            (change)="onPersonGenderChange()"
             >
             </mf-radio-button>
         </div>

@@ -32,7 +32,7 @@ export class PersonsPage implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.persons = this.localStorageService.get(LocalStorageKeys.PERSONS);
+    this.persons = this.localStorageService.get(LocalStorageKeys.PERSONS) ?? [{}, {}] as IPerson[];
   }
 
   public onClickMeClick(): void {

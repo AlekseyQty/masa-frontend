@@ -9,12 +9,12 @@ export class RadioButtonComponent {
   @Input() selectionList: string[] = [];
   @Input() selectedValue: string = "";
 
-  @Output() selectionChange: EventEmitter<string> = new EventEmitter<string>();
+  @Output() selectedValueChange: EventEmitter<string> = new EventEmitter<string>();
   
   public radioId: string = "radio-list-" + Date.now().toString();
 
   public onselectionChange(): void {
-    this.selectionChange.emit(this.selectedValue);
+    this.selectedValueChange.emit(this.selectedValue);
   }
 
 }

@@ -74,8 +74,7 @@ export class PersonCardComponent implements OnInit {
     this.personEmailChange.emit(this.personEmail);
   }
 
-  public onPersonGenderChange(value: any): void {
-    this.personGender = value;
+  public onPersonGenderChange(): void {
     this.personGenderChange.emit(this.personGender);
   }
 
